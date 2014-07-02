@@ -29,10 +29,16 @@ class MainViewController: UIViewController {
         dictionary()
         
      
+        println(sayHello("Anna"))
+        
+        println(sayHello("Brian"))
         
         
+        //当一个函数调用时它的返回值可以忽略不计：
         
-        
+        printAndCount("hello, world")
+        // prints "hello, world" and returns a value of 12
+        printWithoutCounting("hello, world")
         
         
 
@@ -140,6 +146,18 @@ class MainViewController: UIViewController {
         
         //我们可以使用加法操作符（+）来组合两种已存在的相同类型数组
         var sixDoubles = threeDoubles + anotherThreeDoubles
+        
+        
+        
+        //您可以使用此计数函数来对任意字符串进行字符计数，以检索一个包含三个指定Int值的元素统计总数：
+        let total = count("some arbitrary string!")
+        println("\(total.vowels) vowels and \(total.consonants) consonants")
+        // prints "6 vowels and 13 consonants"
+        
+        
+        //调用外部形参名函数
+        join(string: "小白", toString: "小黑", withJoiner: "小黄")
+
         
         
     }
@@ -277,6 +295,89 @@ class MainViewController: UIViewController {
     
     //
     
+    
+    /**
+    *  sayHello 函数名
+    *
+    *  @param String pesonName 参数名 及类型
+    *
+    *  @return 返回值类型
+    */
+    func sayHello(personName: String) ->String{
+        let greeting = "Hello" + personName + "!"
+        
+        return greeting
+    }
+    
+    
+  //多输入形参
+    
+    //函数可以有多个输入形参，把它们写到函数的括号内，并用逗号加以分隔。下面这个函数设置了一个半开区间的开始和结束索引，用来计算在范围内有多少元素：
+    func halfOpenRangeLength(start: Int,end: Int) -> Int{
+        return end - start
+    }
+    
+
+    //无形参函数
+    //函数并没有要求一定要定义的输入形参。下面就是一个没有输入形参的函数，任何时候调用时它总是返回相同的String消息：
+    func sayHelloWorld() -> String {
+        return "hello, world"
+    }
+
+    //无返回值的函数
+    //函数不需要定义一个返回类型。这里有一个版本的sayHello函数，称为waveGoodbye，它会打印自己的String值而不是返回它：
+    func sayGoodbye(personName: String) {
+        println("Goodbye, \(personName)!")
+    }
+    
+    
+
+    func printAndCount(stringToPrint: String) -> Int {
+        println(stringToPrint)
+        return countElements(stringToPrint)
+    }
+    
+    func printWithoutCounting(stringToPrint: String) {
+        printAndCount(stringToPrint)
+    }
+    
+    //多返回值函数
+    func count(string:String) ->(vowels: Int, consonants: Int, Others: Int){
+        
+        var vowels = 0, consonants = 0, others = 0
+        for character in string{
+            
+            switch String(character).lowercaseString {
+                
+            case "a", "e", "i", "o", "u":
+                ++vowels
+            case "b", "c", "d", "f", "g", "h", "j", "k", "l", "m","n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z":
+                ++consonants
+                
+            default:
+                ++others
+            }
+            
+        }
+        return (vowels, consonants, others)
+
+    }
+
+    
+    //外部形参名
+    func join(string s1: String, toString s2: String, withJoiner joiner: String)-> String {
+            return s1 + joiner + s2
+    }
+    
+    // 外部参数名称速记
+    func containsCharacter( # string: String,  characterToFind: Character) -> Bool {
+        for character in string {
+            if character == characterToFind {
+                return true
+            }
+        }
+        return false 
+    }
     
 
     override func didReceiveMemoryWarning() {
