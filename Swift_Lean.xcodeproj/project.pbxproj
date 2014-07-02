@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02C3CAC51964538200FC482C /* Function.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C3CAC41964538200FC482C /* Function.swift */; };
 		1830DC3519629BA100C38084 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1830DC3419629BA100C38084 /* AppDelegate.swift */; };
 		1830DC3719629BA100C38084 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1830DC3619629BA100C38084 /* Images.xcassets */; };
 		1830DC4319629BA100C38084 /* Swift_LeanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1830DC4219629BA100C38084 /* Swift_LeanTests.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		02C3CAC41964538200FC482C /* Function.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Function.swift; sourceTree = "<group>"; };
 		1830DC2F19629BA100C38084 /* Swift_Lean.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swift_Lean.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1830DC3319629BA100C38084 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1830DC3419629BA100C38084 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 			children = (
 				1830DC3419629BA100C38084 /* AppDelegate.swift */,
 				1830DC4C19629BFC00C38084 /* MainViewController.swift */,
+				02C3CAC41964538200FC482C /* Function.swift */,
 				1830DC3619629BA100C38084 /* Images.xcassets */,
 				1830DC3219629BA100C38084 /* Supporting Files */,
 			);
@@ -203,6 +206,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02C3CAC51964538200FC482C /* Function.swift in Sources */,
 				1830DC3519629BA100C38084 /* AppDelegate.swift in Sources */,
 				1830DC4D19629BFC00C38084 /* MainViewController.swift in Sources */,
 			);
@@ -381,6 +385,7 @@
 				1830DC4819629BA100C38084 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1830DC4919629BA100C38084 /* Build configuration list for PBXNativeTarget "Swift_LeanTests" */ = {
 			isa = XCConfigurationList;
@@ -389,6 +394,7 @@
 				1830DC4B19629BA100C38084 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
