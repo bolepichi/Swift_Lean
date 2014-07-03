@@ -34,6 +34,39 @@ class Function: NSObject {
         //与其他类型一样,当你给函数赋一个常量或者变量时，你可以让Swift去推断函数的类型。   
         let anotherMathFunction = addTwoInts
         // anotherMathFunction is inferred to be of type (Int, Int) -> Int
+        
+        
+        
+        //作为型参类型的函数类型调用
+        printMathResult(addTwoInts, a:3, b:5)
+        // prints "Result: 8"
+       
+        
+        
+        
+          //作为返回类型的函数类型
+        var currentValue = 3
+        let moveNearerToZero = chooseStepFunction(currentValue > 0)
+        
+        
+        
+        println("Counting to zero:")
+        // Counting to zero:
+        while currentValue != 0 {
+            println("\(currentValue)... ")
+            currentValue = moveNearerToZero(currentValue)
+        } 
+        println("zero!")
+        
+            
+        
+        //调用潜逃函数
+        while currentValue != 0 {
+            println("\(currentValue)... ")
+            currentValue = moveNearerToZero(currentValue)
+        }
+        println("zero!")
+        
     }
    
     
@@ -156,6 +189,42 @@ class Function: NSObject {
     func multiplyTwoInts(a: Int, b: Int) -> Int {
         return a * b
     }
+    
+    
+      //作为形参类型的函数类型
+
+
+    func printMathResult(mathFunction: (Int, Int) -> Int, a: Int, b: Int) {
+        println("Result: \(mathFunction(a, b))")
+    }
+
+
+
+    
+    
+    //作为返回类型的函数类型
+    
+    func stepForward(input: Int) -> Int{
+        return input + 1
+    }
+    
+    func stepBackward(input: Int) -> Int{
+        return input - 1
+    }
+
+    //这里有一个chooseStepFunction函数，它的返回类型是"函数类型(Int) -> Int"。chooseStepFunction基于名为backwards的布尔形参返回stepBackward或stepForward函数:
+    func chooseStepFunction(backwards: Bool) -> (Int) -> Int {
+        return backwards ? stepBackward : stepForward
+    }
+    
+    
+    //嵌套函数
+    func chooseStepFunction2(backwards: Bool) -> (Int) -> Int {
+        func stepForward(input: Int) -> Int { return input + 1 }
+        func stepBackward(input: Int) -> Int { return input - 1 }
+        return backwards ? stepBackward : stepForward
+    }
+    
     
     
     
